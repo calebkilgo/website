@@ -9,6 +9,19 @@
   text-align: center;
 }
 
+:root{
+  --logo-top: clamp(24px, 6vh, 80px);
+  --logo-size: clamp(28px, 6vh, 72px);
+  --header-gap: clamp(8px, 2vh, 24px);
+  --header-width: min(92vw, 1200px);
+  --nav-gap: clamp(16px, 3vw, 48px);
+  --center-gap: clamp(24px, 6vw, 96px);
+  --icon-size: clamp(16px, 2.2vw, 24px);
+  --nav-padding-y: clamp(6px, 1.2vh, 12px);
+  --nav-padding-x: clamp(10px, 3vw, 28px);
+  --panel-width: clamp(260px, 33vw, 560px);
+}
+
 
 .hero__video {
   position: fixed;
@@ -22,7 +35,6 @@
   z-index: -1;
 }
 
-
 @media (prefers-reduced-motion: reduce) {
   .hero__video { display: none; }
   .hero { background: black center/cover no-repeat; }
@@ -32,4 +44,111 @@
 @media (max-width: 640px) {
   .hero__video { display: none; }
   .hero { background: black center/cover no-repeat; }
+}
+
+.audiowide-regular {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.glass-card{
+  width: min(90vw, 560px);
+  margin: 10vh auto;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  color: #fff;
+}
+
+.glass-card-right{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: var(--panel-width);
+  margin: 0;
+  float: none;
+  z-index: 10;
+}
+
+.glass-card-top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 33.33vw;
+  height: 40%;
+  margin: 0;
+  z-index: 11;
+}
+
+.glass-card-bottom-left{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: var(--panel-width);
+  height: 40%;
+  margin: 0;
+  z-index: 11;
+}
+
+.logo{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+}
+.logo img{ height: calc(var(--logo-size) * 0.6); width: auto; display: block; }
+
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 8rem;
+  z-index: 12;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.nav-left{
+  display: flex;
+  gap: 180px;
+  margin-left: -2rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 180px;
+}
+
+.nav-item{
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(10px, 1.4vw, 18px);
+  color: #fff;
+  text-decoration: none;
+  font-family: "Share Tech Mono", ui-monospace, monospace;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+}
+
+.nav-item img{
+  width: var(--icon-size);
+  height: var(--icon-size);
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
 }
