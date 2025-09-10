@@ -1,3 +1,12 @@
+/* Reset default margins and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -52,70 +61,24 @@
   font-style: normal;
 }
 
-.glass-card{
-  width: min(90vw, 560px);
-  margin: 10vh auto;
-  padding: 1.25rem 1.5rem;
-  border-radius: 0;
-
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 20px 60px rgba(0,0,0,.35);
-  color: #fff;
-}
-
-.glass-card-right{
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: var(--panel-width);
-  margin: 0;
-  float: none;
-  z-index: 10;
-}
-
-.glass-card-top{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 33.33vw;
-  height: 40%;
-  margin: 0;
-  z-index: 11;
-}
-
-.glass-card-bottom-left{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: var(--panel-width);
-  height: 40%;
-  margin: 0;
-  z-index: 11;
-}
-
 .logo{
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   z-index: 12;
 }
-.logo img{ height: calc(var(--logo-size) * 0.6); width: auto; display: block; }
 
 .site-header{
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 2rem 8rem;
+  padding: 2rem max(8rem, 20px);
   z-index: 12;
   background: rgba(0,0,0,0.2);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  box-sizing: border-box;
 }
 
 .nav{
@@ -151,4 +114,143 @@
   width: var(--icon-size);
   height: var(--icon-size);
   filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
+}
+
+.main-text {
+  position: fixed;
+  left: 8rem;
+  top: 40%;
+  transform: translateY(-50%);
+  text-align: left;
+  font-family: "Exo 2", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 300;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+
+.hero-title {
+  position: fixed;
+  left: 8rem;
+  top: 180px;
+  font-size: 80px;
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+  line-height: 1.1;
+  color: white;
+  margin: 0;
+  z-index: 10;
+  text-align: left;
+}
+
+.glass-card {
+  --bg-color: rgba(255, 255, 255, 0.25);
+  --highlight: rgba(255, 255, 255, 0.75);
+  --text: #ffffff;
+  
+  position: fixed;
+  left: 8rem;
+  top: 650px;
+  height: 200px;
+  width: 400px;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.glass-filter,
+.glass-overlay,
+.glass-specular {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.glass-filter {
+  z-index: 1;
+  backdrop-filter: blur(4px);
+  filter: url(#glass-distortion) saturate(120%) brightness(1.15);
+}
+
+.glass-distortion-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05) 0%, transparent 80%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 80%);
+  background-size: 300% 300%;
+  animation: floatDistort 10s infinite ease-in-out;
+  mix-blend-mode: overlay;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes floatDistort {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+
+.glass-overlay {
+  z-index: 2;
+  background: var(--bg-color);
+}
+
+.glass-specular {
+  z-index: 3;
+  box-shadow: inset 1px 1px 1px var(--highlight);
+}
+
+.glass-content {
+  position: relative;
+  z-index: 4;
+  padding: 40px;
+  color: var(--text);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+  height: 100%;
+}
+
+.glass-content p {
+  margin: 0;
+  margin-top: 20px;
+  opacity: 0.9;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.discover-button {
+  display: inline-block;
+  padding: 12px 32px;
+  color: var(--text);
+  font-family: "Exo 2", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.discover-button:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .glass-card {
+    --bg-color: rgba(0, 0, 0, 0.25);
+    --highlight: rgba(255, 255, 255, 0.15);
+  }
 }

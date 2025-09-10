@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Share+Tech+Mono&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <section class="hero">
@@ -47,9 +47,30 @@
         </div>
       </nav>
     </header>
-  </section>
-  <div class="main-text">
-    
+    <!-- SVG Filter for Glass Distortion -->
+  <svg style="display: none">
+    <filter id="glass-distortion">
+      <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+    </filter>
+  </svg>
+
+  <h3 class="hero-title">Gateway
+    <br />
+    to the
+    <br />
+    Galaxy
+  </h3>
+
+  <div class="glass-card">
+    <div class="glass-filter"></div>
+    <div class="glass-overlay"></div>
+    <div class="glass-specular"></div>
+    <div class="glass-content">
+      <p>Where exploration meets innovation.</p>
+      <a href="#" class="discover-button">Discover</a>
+    </div>
   </div>
+  </section>
 </body>
 </html>
