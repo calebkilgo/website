@@ -1,4 +1,3 @@
-/* Reset default margins and padding */
 html, body {
   margin: 0;
   padding: 0;
@@ -67,7 +66,6 @@ html, body {
   transform: translateX(-50%);
   z-index: 12;
 }
-
 .site-header{
   position: fixed;
   top: 0;
@@ -92,12 +90,13 @@ html, body {
 .nav-left{
   display: flex;
   gap: 180px;
-  margin-left: -2rem;
+  margin-left: 2px;
 }
 
 .nav-right {
   display: flex;
   gap: 180px;
+  margin-right: 2px;
 }
 
 .nav-item{
@@ -148,7 +147,7 @@ h1 {
   text-align: left;
 }
 
-.glass-card {
+.glass-card-left {
   --bg-color: rgba(255, 255, 255, 0.25);
   --highlight: rgba(255, 255, 255, 0.75);
   --text: #ffffff;
@@ -163,15 +162,15 @@ h1 {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
 }
 
-.glass-filter,
-.glass-overlay,
-.glass-specular {
+.glass-filter-left,
+.glass-overlay-left,
+.glass-specular-left {
   position: absolute;
   inset: 0;
   border-radius: inherit;
 }
 
-.glass-filter {
+.glass-filter-left {
   z-index: 1;
   backdrop-filter: blur(4px);
   filter: url(#glass-distortion) saturate(120%) brightness(1.15);
@@ -196,17 +195,17 @@ h1 {
 }
 
 
-.glass-overlay {
+.glass-overlay-left {
   z-index: 2;
   background: var(--bg-color);
 }
 
-.glass-specular {
+.glass-specular-left {
   z-index: 3;
-  box-shadow: inset 1px 1px 1px var(--highlight);
+  box-shadow: inset 0 0 0.5px var(--highlight);
 }
 
-.glass-content {
+.glass-content-left {
   position: relative;
   z-index: 4;
   padding: 40px;
@@ -220,7 +219,7 @@ h1 {
   height: 100%;
 }
 
-.glass-content p {
+.glass-content-left p {
   margin: 0;
   margin-top: 20px;
   opacity: 0.9;
@@ -249,7 +248,98 @@ h1 {
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-  .glass-card {
+  .glass-card-left {
+    --bg-color: rgba(0, 0, 0, 0.25);
+    --highlight: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.glass-card-right {
+  --bg-color: rgba(255, 255, 255, 0.25);
+  --highlight: rgba(255, 255, 255, 0.75);
+  --text: #ffffff;
+  
+  position: fixed;
+  right: 8rem;
+  top: 180px;
+  height: 800px;
+  width: 825px;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.glass-filter-right,
+.glass-overlay-right,
+.glass-specular-right {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.glass-filter-right {
+  z-index: 1;
+  backdrop-filter: blur(4px);
+  filter: url(#glass-distortion) saturate(120%) brightness(1.15);
+}
+
+@keyframes floatDistort {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+
+.glass-overlay-right {
+  z-index: 2;
+  background: var(--bg-color);
+}
+
+.glass-specular-right {
+  z-index: 3;
+  box-shadow: inset 0 0 0.5px var(--highlight);
+}
+
+.glass-content-right {
+  position: relative;
+  z-index: 4;
+  padding: 40px;
+  color: var(--text);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+  height: 100%;
+}
+
+.glass-content-right h3 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.discover-button {
+  display: inline-block;
+  padding: 12px 32px;
+  color: var(--text);
+  font-family: "Exo 2", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.discover-button:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .glass-card-right {
     --bg-color: rgba(0, 0, 0, 0.25);
     --highlight: rgba(255, 255, 255, 0.15);
   }

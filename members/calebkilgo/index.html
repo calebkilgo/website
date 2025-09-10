@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
   <title>Commercial Space Travel Agency</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +25,8 @@
       <nav class="nav">
         <div class="nav-left">
           <a href="#" class="nav-item">
-            <img src="./Assets/icons/collection.svg" alt="Collection" />
-            <span>Collection</span>
+            <img src="./Assets/icons/contact.svg" alt="Contact" />
+            <span>Contact</span>
           </a>
           <a href="#" class="nav-item">
             <img src="./Assets/icons/menu.svg" alt="Menu" />
@@ -47,7 +48,7 @@
         </div>
       </nav>
     </header>
-    <!-- SVG Filter for Glass Distortion -->
+    <!-- GLASS CARD LEFT -->
   <svg style="display: none">
     <filter id="glass-distortion">
       <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
@@ -62,15 +63,36 @@
     Galaxy
   </h3>
 
-  <div class="glass-card">
-    <div class="glass-filter"></div>
-    <div class="glass-overlay"></div>
-    <div class="glass-specular"></div>
-    <div class="glass-content">
+  <div class="glass-card-left">
+    <div class="glass-filter-left"></div>
+    <div class="glass-overlay-left"></div>
+    <div class="glass-specular-left"></div>
+    <div class="glass-content-left">
       <p>Where exploration meets innovation.</p>
       <a href="#" class="discover-button">Discover</a>
     </div>
   </div>
+
+  <!-- GLASS CARD RIGHT -->
+  <svg style="display: none">
+    <filter id="glass-distortion">
+      <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+    </filter>
+  </svg>
+
+  <div class="glass-card-right">
+    <div class="glass-filter-right"></div>
+    <div class="glass-overlay-right"></div>
+    <div class="glass-specular-right"></div>
+    <div class="glass-content-right">
+      <h3>Planets here</h3>
+    </div>
+  </div>
+
+
+
+
   </section>
 </body>
 </html>
