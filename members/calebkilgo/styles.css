@@ -19,3 +19,37 @@ html, body {
     object-fit: cover;
     z-index: -1;
 }
+
+
+.name_title{
+    position: absolute;
+    top: 10%;
+    left: 31%;
+    color: white;
+    font-size: 4em;
+    font-family: "Oxanium", sans-serif;
+    font-weight: 600;
+    font-optical-sizing: auto;
+}
+
+.subtitle{
+    position: absolute;
+    top: 27%;
+    left: 31%;
+    color: white;
+    font-size: 1em;
+    font-family: "Oxanium", sans-serif;
+    font-weight: 200;
+    font-optical-sizing: auto;
+}
+
+.academic_description{
+    position: absolute;
+    top: 35%;
+    left: 36%;
+    color: rgb(146, 146, 146);
+    font-size: 1em;
+    font-family: "Oxanium", sans-serif;
+    font-weight: 200;
+    font-optical-sizing: auto;
+}
