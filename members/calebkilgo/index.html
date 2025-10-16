@@ -12,7 +12,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Background -->
+    <div class="clock-container">
+        <div class="location">Huntsville, AL</div>
+        <div class="time" id="clock">00:00:00.000</div>
+    </div>
+
+    <div class="status-container">
+        <div class="status-label">SYSTEM STATUS</div>
+        <div class="status-indicator">
+            <span class="pulse"></span>
+            <span class="status-text">ONLINE</span>
+        </div>
+    </div>
+
+    <div class="build-info">
+        <div class="version">v2.0.1</div>
+        <div class="build-date" id="buildDate">BUILD: 2025.10.16</div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <div class="network-stats">
+        <div class="stats-label">NETWORK</div>
+        <div class="stat-row">
+            <span class="stat-name">PING:</span>
+            <span class="stat-value" id="ping">--</span>
+            <span class="stat-unit">ms</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-name">LATENCY:</span>
+            <span class="stat-value" id="latency">--</span>
+            <span class="stat-unit">ms</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-name">PACKETS:</span>
+            <span class="stat-value" id="packets">--</span>
+            <span class="stat-unit">rx</span>
+        </div>
+    </div>
+
     <video class="bg-video" autoplay muted loop playsinline>
         <source src="assets/bg.mp4" type="video/mp4">
     </video>
@@ -77,6 +115,8 @@
         </div>
     </div>
     </div>
+
+    <script src="scripts.js"></script>
 
 </body>
 </html>
