@@ -9,16 +9,73 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Background -->
     <video class="bg-video" autoplay muted loop playsinline>
         <source src="assets/bg.mp4" type="video/mp4">
     </video>
     
+    <!-- Main Title-->
     <div>
         <h1 class="name_title">CALEB KILGO</h1>
         <p class="subtitle">Computer Science Student at The University of Alabama in Huntsville</p>
         <p class="academic_description">$ minor/Mathematics &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $ focus/Data_Science</p>
+    </div>
+
+    <!-- Projects Glass Card  -->
+    <svg style="display: none">
+    <filter id="glass-distortion">
+        <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+    </filter>
+    </svg>
+
+    <div class="glass-card-left">
+    <div class="glass-filter"></div>
+    <div class="glass-overlay"></div>
+    <div class="glass-specular"></div>
+    <div class="glass-content">
+        <h3>Projects</h3>
+        <div class="project-list">
+            <a href="https://github.com/calebkilgo/Virtual-Assistant" target="_blank" class="project-item1">
+                <h4>AI Voice Assistant</h4>
+                <p>Real-time Python AI voice assistant using ElevenLabs API with conversational, interruptable, and context-aware responses.</p>
+            </a>
+            <a href="https://divida.io" target="_blank" class="project-item2">
+                <h4>Divida.io</h4>
+                <p>Full-stack React, Tailwind CSS, Supabase web app with OCR, GPT parsing, and payment integration.</p>
+            </a>
+    </div>
+    </div>
+
+    <!-- Contact Glass Card -->
+    <svg style="display: none">
+    <filter id="glass-distortion">
+        <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+    </filter>
+    </svg>
+
+    <div class="glass-card-right">
+    <div class="glass-filter"></div>
+    <div class="glass-overlay"></div>
+    <div class="glass-specular"></div>
+    <div class="glass-content">
+        <h3>Get in Touch</h3>
+        <div class="contact-buttons">
+            <a href="https://www.linkedin.com/in/caleb-kilgo/" target="_blank" class="contact-btn">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/calebkilgo" target="_blank" class="contact-btn">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:calebkilgo10@gmail.com" class="contact-btn">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+        </div>
+    </div>
     </div>
 
 </body>
